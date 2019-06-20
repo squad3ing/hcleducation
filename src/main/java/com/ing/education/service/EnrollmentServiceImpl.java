@@ -13,7 +13,12 @@ import com.ing.education.repository.EnrollmentRepository;
 
 @Service
 public class EnrollmentServiceImpl implements IEnrollmentService {
-
+	@Autowired 
+	StudentRepository studentRepository;
+	
+	@Autowired 
+	CourseRepository courseRepository;
+	
 	@Autowired
 	EnrollmentRepository enrollmentRepository;
 	
@@ -31,7 +36,7 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
 		enrollment = enrollmentRepository.save(enrollment);
 
 		enrollmentDTO.setEnrollmentId(enrollment.getEnrollmentId());
-		enrollmentDTO.setMessage("Student enrolled sucessfully");
+		//enrollmentDTO.setMessage("Student enrolled sucessfully");
 
 		return enrollmentDTO;
 	}
@@ -55,12 +60,6 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
 			return courseDetailsDTO;
 		}
 
-	}
-
-	@Override
-	public EnrollmentDTO enrollment(EnrollmentDTO enrollmentDTO) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
