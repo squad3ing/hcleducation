@@ -26,7 +26,7 @@ public class LoginController {
 	@PutMapping("/login")
 	public ResponseEntity<StudentDTO> login(@RequestBody StudentDTO studentDTO) throws IllegalAccessException, InvocationTargetException, StudentNotFoundException{
 		 studentDTO = loginService.login(studentDTO.getLoginName(), studentDTO.getPassword());
-		return new ResponseEntity<StudentDTO>(studentDTO,HttpStatus.FOUND);
+		return new ResponseEntity<StudentDTO>(studentDTO,HttpStatus.OK);
 	}
 
 }
