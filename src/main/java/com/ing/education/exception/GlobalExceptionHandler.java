@@ -28,5 +28,15 @@ public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler{
 		
 		
 	}
-
+	
+	@ExceptionHandler(value = {CoursesEmptyException.class})
+	public ResponseEntity<ResponseError> courseError(Exception e){
+		
+		ResponseError courseError = new ResponseError(e.getMessage());
+		
+		return new ResponseEntity<ResponseError>(courseError,HttpStatus.NOT_FOUND);
+		
+		
+	}
+	
 }
