@@ -11,15 +11,13 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class LoginError implements Serializable {
+public class ResponseError implements Serializable {
 	
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
 	private String errorMessage;
 	
-	public LoginError(String message) {
+	public ResponseError(String message) {
 		this.errorMessage = message;
 	}
 	
