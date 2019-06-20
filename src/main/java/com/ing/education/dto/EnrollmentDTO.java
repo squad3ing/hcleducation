@@ -14,9 +14,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class EnrollmentDTO implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private Long enrollmentId;
@@ -24,5 +21,4 @@ public class EnrollmentDTO implements Serializable {
 	private Long courseId;
 	private Date enrollDate;
 	private String courseName;
-	private String message;
 }
