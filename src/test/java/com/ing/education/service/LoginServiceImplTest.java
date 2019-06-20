@@ -1,4 +1,4 @@
-package com.ing.eduation.service;
+package com.ing.education.service;
 
 import java.lang.reflect.InvocationTargetException;
 

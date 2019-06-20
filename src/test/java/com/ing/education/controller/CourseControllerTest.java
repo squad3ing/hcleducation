@@ -1,7 +1,5 @@
 
-  package com.ing.education.controller;
-
-import static org.junit.Assert.assertArrayEquals;
+package com.ing.education.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import com.ing.education.controller.CourseController;
 import com.ing.education.dto.CourseDTO;
 import com.ing.education.service.ICourseService;
 
