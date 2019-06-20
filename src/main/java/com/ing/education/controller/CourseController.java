@@ -27,8 +27,8 @@ public class CourseController {
 	@GetMapping("/courses")
 	public ResponseEntity<List<CourseDTO>> getAllCourses() {
 		List<CourseDTO> courses = courseService.getAllCourses();
-		lOGGER.info("fetching...");
-		return new ResponseEntity<>(courses, HttpStatus.OK);
+		lOGGER.info("fetched");
+		return new ResponseEntity<List<CourseDTO>>(courses, HttpStatus.OK);
 
 	}
 }

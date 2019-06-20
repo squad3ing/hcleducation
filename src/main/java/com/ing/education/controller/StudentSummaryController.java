@@ -27,7 +27,7 @@ public class StudentSummaryController {
 	@Autowired
 	IEnrollmentService iEnrollmentService;
 	
-	@GetMapping("summary/{studentId}")
+	@GetMapping("/summary/{studentId}")
 	public ResponseEntity<EnrollmentDTO> getCourseSummary(@PathVariable long studentId)throws EnrollmentNotFoundException{
 		EnrollmentDTO enrollmentDTO = iEnrollmentService.getCourseSummary(studentId);
 		if(enrollmentDTO ==null) {

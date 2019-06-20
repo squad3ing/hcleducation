@@ -10,9 +10,9 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class StudentNotFoundException extends Exception{/**
-	 * 
-	 */
+public class StudentNotFoundException extends Exception{
+	
+	
 	private static final long serialVersionUID = 1L;
 	
 

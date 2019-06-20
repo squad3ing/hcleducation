@@ -14,11 +14,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class EnrollmentDTO implements Serializable {
 
-	private static final long serialVersionUID = 1L;
 
-	private Long enrollmentId;
-	private Long studentId;
-	private Long courseId;
-	private Date enrollDate;
-	private String courseName;
+private static final long serialVersionUID = 1L;
+
+private Long enrollmentId;
+private Long studentId;
+private Long courseId;
+private Date enrollDate;
+private String courseName;
+private double fee;
+private String duration;
 }
+

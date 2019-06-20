@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.ing.education.entity.Enrollment;
 
 @Repository
-public interface EnrollmentRepository extends JpaRepository<Enrollment, Long> {
+public interface EnrollmentRepository extends JpaRepository<Enrollment, Long>{
 	@Query("Select e from Enrollment e where student.studentId = ?1")
 	Enrollment findByStudent(long studentId);
 

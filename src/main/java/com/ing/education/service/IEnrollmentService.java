@@ -9,6 +9,6 @@ import com.ing.education.exception.EnrollmentNotFoundException;
 public interface IEnrollmentService {
 
 	EnrollmentDTO getCourseSummary(long studentId)throws EnrollmentNotFoundException;
-
 	EnrollmentDTO enrollment(EnrollmentDTO enrollmentDTO);
+
 }
