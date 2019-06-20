@@ -14,7 +14,7 @@ import com.ing.education.service.IEnrollmentService;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(value = {})
+@CrossOrigin(allowedHeaders = { "*", "*/" }, origins = { "*", "*/" })
 public class EnrollmentController {
 
 	@Autowired
