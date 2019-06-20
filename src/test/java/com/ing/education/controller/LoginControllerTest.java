@@ -20,7 +20,7 @@ import com.ing.education.service.ILoginService;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(value = LoginController.class)
-public class LoginControllerTest {
+ public class LoginControllerTest {
 	@Autowired
 	MockMvc mockMvc;
 
