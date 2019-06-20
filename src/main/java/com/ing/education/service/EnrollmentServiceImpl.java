@@ -16,12 +16,13 @@ import com.ing.education.repository.StudentRepository;
 
 @Service
 public class EnrollmentServiceImpl implements IEnrollmentService {
-	@Autowired
-	StudentRepository studentRepository;
-	
+
 	@Autowired
 	CourseRepository courseRepository;
 
+	@Autowired 
+	StudentRepository studentRepository;
+	
 	@Autowired
 	EnrollmentRepository enrollmentRepository;
 	
@@ -40,7 +41,6 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
 		enrollment = enrollmentRepository.save(enrollment);
 
 		enrollmentDTO.setEnrollmentId(enrollment.getEnrollmentId());
-	
 
 		return enrollmentDTO;
 	}
@@ -65,6 +65,7 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
 
 			return enrollDetailsDTO;
 		}
+
 	}
 
 }
