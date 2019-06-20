@@ -18,7 +18,8 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@Table
+@Table(name = "enrollment")
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -26,9 +27,13 @@ import lombok.ToString;
 @ToString
 public class Enrollment implements Serializable {
 
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private Long enrollmentId;
 	@OneToOne
 	@JoinColumn(name = "studentId")
