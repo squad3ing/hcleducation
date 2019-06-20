@@ -16,7 +16,25 @@ public class EnrollmentServiceImpl implements IEnrollmentService {
 
 	@Autowired
 	EnrollmentRepository enrollmentRepository;
+	
+	@Override
+	public EnrollmentDTO enrollment(EnrollmentDTO enrollmentDTO) {
+		Student student = studentRepository.findById((long) enrollmentDTO.getStudentId()).get();
 
+		CourseEntity course = courseRepository.findById((long) enrollmentDTO.getCourseId()).get();
+
+		Enrollment enrollment = new Enrollment();
+		enrollment.setStudent(student);
+		enrollment.setCourse(course);
+		enrollment.setCourseName(course.getCourseName());
+		student.setIsRegistered("yes");
+		enrollment = enrollmentRepository.save(enrollment);
+
+		enrollmentDTO.setEnrollmentId(enrollment.getEnrollmentId());
+		enrollmentDTO.setMessage("Student enrolled sucessfully");
+
+		return enrollmentDTO;
+	}
 	@Override
 	public EnrollmentDTO getCourseSummary(long studentId) throws EnrollmentNotFoundException {
 		StudentDTO studentDTO = new StudentDTO();
