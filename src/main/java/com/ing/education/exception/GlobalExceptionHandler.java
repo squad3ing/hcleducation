@@ -10,11 +10,21 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler{
 	
 	@ExceptionHandler(value = {StudentNotFoundException.class})
-	public ResponseEntity<LoginError> loginError(Exception e){
+	public ResponseEntity<ResponseError> loginError(Exception e){
 		
-		LoginError loginError = new LoginError(e.getMessage());
+		ResponseError loginError = new ResponseError(e.getMessage());
 		
-		return new ResponseEntity<LoginError>(loginError,HttpStatus.NOT_FOUND);
+		return new ResponseEntity<ResponseError>(loginError,HttpStatus.NOT_FOUND);
+		
+		
+	}
+	
+	@ExceptionHandler(value = {EnrollmentNotFoundException.class})
+	public ResponseEntity<ResponseError> enrollmentError(Exception e){
+		
+		ResponseError enrollmentError = new ResponseError(e.getMessage());
+		
+		return new ResponseEntity<ResponseError>(enrollmentError,HttpStatus.NOT_FOUND);
 		
 		
 	}
