@@ -1,10 +1,12 @@
 package com.ing.education.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.experimental.categories.Categories.ExcludeCategory;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -35,7 +37,7 @@ public class CourseServiceImplTest {
 		courseEntity = new CourseEntity();
 		courseEntity.setCourseName("cour2");
 		courseList.add(courseEntity);
-		Mockito.when(courseRepository.findAll()).thenReturn(courseList);
+		Mockito.when(courseRepository.findByStartDateAfter(Mockito.any(Date.class))).thenReturn(courseList);
 		List<CourseDTO> courses = courseServiceImpl.getAllCourses();
 		Assert.assertEquals(2, courses.size());
 		Assert.assertEquals("cour1", courses.get(0).getCourseName());
